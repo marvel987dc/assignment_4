@@ -1,0 +1,22 @@
+body {
+    background-color: rgb(223, 193, 150);
+}
+header
+{
+width: 500px;
+height: 100px;
+text-align:center;
+border: 1px dashed #000000;
+}
+ul
+{
+list-style:square;
+}
+h2
+{
+font-family: sans-serif;
+}
+footer
+{
+    text-transform: uppercase;
+}

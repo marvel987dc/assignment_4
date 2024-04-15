@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="searchInput" placeholder="Search...">
+    <button onclick="search()">Search</button>
+
+    <ul id="searchResults"></ul>
+</body>
+<script src="fetch_2.js"></script>
+<script>
+    function search() {
+        const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+        const countries = getCountries(); // Assuming this function is defined in fetch_2.js
+        const filteredCountries = countries.filter(country => country.toLowerCase().includes(searchTerm));
+        
+        displayResults(filteredCountries);
+    }
+
+    function displayResults(results) {
+        const searchResults = document.getElementById("searchResults");
+        searchResults.innerHTML = "";
+        
+        results.forEach(result => {
+            const li = document.createElement("li");
+            li.textContent = result;
+            searchResults.appendChild(li);
+        });
+    }
+</script>
+</html>
